@@ -1,2 +1,74 @@
 #main_footer {
+  position: fixed;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0.15em 1em;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #bd4d8f 0%, #4e1da8 100%);
+  color: var(--gold);
+
+  .left-side {
+    display: flex;
+    gap: 0.6em;
+    .socials {
+      display: flex;
+      gap: 0.2em;
+      scale: 1.5;
+      transform-origin: bottom left;
+      margin-top: -0.55em;
+    }
+    .btn-social {
+      background: #8948ff;
+      color: white;
+      padding: 0.25em;
+      transform: translateY(25%);
+      box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.42);
+
+      &:hover {
+        transform: translateY(5%);
+      }
+    }
+  }
+
+  .right-side {
+    color: rgba(255, 255, 255, 0.475);
+    opacity: 0.5;
+    font-family: var(--fontAlt);
+    font-weight: lighter;
+    &:hover {
+      b {
+        transform: translateY(-50px);
+        background: #bd4d8f;
+        color: white;
+        padding: 0.25em;
+      }
+    }
+    b {
+      display: inline-block;
+      transition: all 500ms ease;
+      color: rgba(255, 255, 255, 0.809);
+      // translate
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.decor_deck.footer {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  scale: 0.7;
+  transform-origin: bottom left;
+  z-index: -5;
+
+  &.r {
+    left: initial;
+    transform-origin: bottom right;
+    right: 0%;
+  }
 }

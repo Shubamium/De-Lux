@@ -4,8 +4,12 @@ import "./globals.scss";
 import localFont from "next/font/local";
 import { CSSProperties } from "react";
 import Header from "./layout/header/Header";
+import Footer from "./layout/footer/Footer";
 
-const fredoka = Fredoka({ subsets: ["latin"] });
+const fredoka = Fredoka({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+});
 
 const jqka = localFont({ src: "./fonts/jqka.ttf" });
 export const metadata: Metadata = {
@@ -31,6 +35,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
