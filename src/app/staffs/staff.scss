@@ -1,0 +1,94 @@
+#page_staff {
+  margin-top: 120px;
+  #staff-heading {
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+    color: white;
+
+    p {
+      font-family: var(--fontAlt);
+      font-size: 1rem;
+      text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.343);
+    }
+  }
+
+  #staff-list {
+    padding: 1em;
+    padding-bottom: 150px;
+    .staff-card {
+      // width: 100px;
+      // height: 100px;
+      width: 230px;
+      .staff-art-container {
+        height: 230px;
+        width: 230px;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 20%;
+          left: 0%;
+          width: 100%;
+          height: 100%;
+          background: red;
+          z-index: -2;
+          scale: 0.8;
+          transition: all 150ms ease;
+          border-radius: 50%;
+          background: url("/backgrounds/pattern_checker_light.png"),
+            linear-gradient(
+              111deg,
+              rgba(237, 61, 76, 0.8) 0%,
+              rgba(132, 58, 190, 0.8) 100%
+            );
+          background-size: 400px;
+          outline: 5px solid var(--gold);
+          // z-index: -2;
+          outline-offset: 5px;
+        }
+        transform: translateY(10%);
+        transition: all 500ms ease;
+        transition-delay: 150ms;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      &:hover {
+        .staff-art-container {
+          transform: translateY(0%);
+          &::before {
+            scale: 1;
+          }
+        }
+      }
+      .staff-info {
+        background: linear-gradient(81deg, #7334bc 0%, #bd4ada 100%);
+        color: white;
+        text-align: center;
+        border-radius: 1em;
+        padding: 0.45em 1em;
+        position: relative;
+        z-index: 2;
+        h2 {
+          opacity: 0.8;
+          font-size: 1.2rem;
+        }
+        svg {
+          margin: -0.2em 0;
+        }
+        p {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    max-width: 80%;
+    gap: 1.5em;
+  }
+}
