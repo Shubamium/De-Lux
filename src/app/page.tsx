@@ -1,3 +1,4 @@
+import "./home.scss";
 export default function Home() {
   return (
     <main id="page_home">
