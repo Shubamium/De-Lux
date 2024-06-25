@@ -5,7 +5,15 @@
     max-width: 600px;
     text-align: center;
     color: white;
-
+    .styled-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h2 {
+      text-align: center;
+    }
     p {
       font-family: var(--fontAlt);
       font-size: 1rem;
@@ -75,6 +83,7 @@
         h2 {
           opacity: 0.8;
           font-size: 1.2rem;
+          // width: ;
         }
         svg {
           margin: -0.2em 0;

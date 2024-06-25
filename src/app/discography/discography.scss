@@ -1,0 +1,71 @@
+#page_discography {
+  margin-top: 150px;
+  #discography {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 150px;
+    .head {
+      h2 {
+        color: transparent;
+      }
+    }
+
+    .category-list {
+      display: flex;
+      gap: 1em;
+      padding: 1em 0;
+      flex-wrap: wrap;
+      .btn-category {
+        background: url("/backgrounds/pattern_zig.png"), #401899;
+        color: white;
+        border: 2px solid var(--gold);
+        font-family: var(--fontMain);
+        font-size: 1.5rem;
+        padding: 0.25em 1em;
+      }
+    }
+    .disco-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1em;
+      padding: 1em 0;
+      .yt-embed {
+        height: 250px;
+        background: #401899;
+        iframe {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          border: none;
+        }
+      }
+      .disco-card {
+        border-radius: 1em;
+        box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.271);
+        overflow: hidden;
+        background: url("/backgrounds/pattern_zig.png"), #401899;
+        color: white;
+        border: 2px solid var(--gold);
+        font-family: var(--fontMain);
+        font-size: 1.5rem;
+        background-blend-mode: overlay;
+        // padding: 0.25em 1em;
+        .disco-info {
+          padding: 1em;
+        }
+        h2 {
+          font-size: 1.4rem;
+          color: var(--gold);
+        }
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  p {
+    font-family: var(--fontAlt);
+    color: white;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.39);
+  }
+}

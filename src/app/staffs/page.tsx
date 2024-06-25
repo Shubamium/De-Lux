@@ -8,13 +8,13 @@ export default function Staff({}: Props) {
       <section id="staff-heading">
         <div className="styled-title">
           <h2>STAFF</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea{" "}
-          </p>
         </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea{" "}
+        </p>
       </section>
       <section id="staff-list">
         <a href="#" target="_blank" className="staff-card">
