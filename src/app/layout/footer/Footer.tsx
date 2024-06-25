@@ -8,6 +8,11 @@ export default function Footer({}: Props) {
   return (
     <>
       <img
+        src="/decors/back-footer-decor.png"
+        alt=""
+        className="decor_footer-back"
+      />
+      <img
         src="/decors/card-deck-bottom_l.png"
         alt=""
         className="decor_deck footer l"

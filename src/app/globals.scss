@@ -15,48 +15,10 @@ body {
 }
 
 body {
-  &::after {
-    background: linear-gradient(
-      180deg,
-      #06a1ba 0%,
-      #0764a1 25%,
-      #082479 50%,
-      #060646 100%
-    );
-    content: "";
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    z-index: -1000;
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100vw;
-    height: 100vh;
-    z-index: -100;
-    background: url("/backgrounds/pattern_bow.png");
-    background-size: 1200px;
-
-    animation: movement-bg 250s infinite linear;
-    mix-blend-mode: screen;
-    @keyframes movement-bg {
-      0% {
-        background-position: 0% 0%;
-      }
-      100% {
-        background-position: 0% 2100vh;
-      }
-    }
-    background-blend-mode: screen;
-  }
   // background-size: cover;
   // background-size: 100vw 100vh;
   font-family: var(--fontAlt);
+  height: 100%;
 }
 
 a {
@@ -82,5 +44,47 @@ button {
   }
   &:active {
     scale: 0.95;
+  }
+}
+
+main {
+  &::after {
+    background: linear-gradient(
+      180deg,
+      #06a1ba 0%,
+      #0764a1 25%,
+      #082479 50%,
+      #060646 100%
+    );
+    content: "";
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: -1000;
+  }
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    z-index: -100;
+    background: url("/backgrounds/pattern_bow.png");
+    background-size: 1200px;
+
+    animation: movement-bg 250s infinite linear;
+    mix-blend-mode: screen;
+    @keyframes movement-bg {
+      0% {
+        background-position: 0% 0%;
+      }
+      100% {
+        background-position: 0% 2100vh;
+      }
+    }
+    background-blend-mode: screen;
   }
 }

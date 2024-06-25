@@ -1,0 +1,73 @@
+#page_home {
+  min-height: 300vh;
+  // height: 2000px;
+  #animated-hero {
+    background: #2a2530;
+    // object-fit: contain;
+    height: 120vh;
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      // object-fit: cover;
+    }
+  }
+
+  #about-section {
+    .about-panel {
+      max-width: 900px;
+      margin: 100px auto;
+      background: url("/backgrounds/pattern_checker_light.png"), #441aa3;
+      background-size: 500px;
+      background-blend-mode: multiply;
+      border-radius: 2em;
+      border: 3px solid var(--gold);
+      box-shadow: 2px 2px var(--orange), 4px 4px 10px rgba(0, 0, 0, 0.219);
+      padding: 2em 5em;
+      padding-top: 4em;
+      margin-top: 200px;
+      position: relative;
+      // margin-top: 2em;
+      // padding: 1em;
+      .about-banner {
+        width: 100%;
+        height: 300px;
+        border-radius: 2em;
+        box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.217);
+        background: #2a2530;
+        margin-bottom: 1em;
+        object-fit: cover;
+      }
+      .about-logo {
+        // max-width: 35%;
+        // width: 250px;
+        height: 150px;
+        object-fit: contain;
+        position: absolute;
+        top: -80px;
+        left: 10%;
+        width: 80%;
+        // z-index: ;
+        // margin: 0 auto;
+      }
+
+      p {
+        font-family: var(--fontAlt);
+        color: white;
+        text-shadow: 2px 2px 4px black;
+        font-size: 1.2rem;
+        min-height: 250px;
+      }
+
+      .side-idol {
+        position: absolute;
+        left: -10%;
+        bottom: 10%;
+        &.r {
+          left: initial;
+          right: -10%;
+        }
+      }
+    }
+  }
+}

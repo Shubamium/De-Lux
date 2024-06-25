@@ -1,3 +1,9 @@
+.decor_footer-back {
+  position: fixed;
+  z-index: 50;
+  bottom: -12%;
+  height: 22vh;
+}
 #main_footer {
   position: fixed;
   bottom: 0%;
@@ -11,6 +17,7 @@
   letter-spacing: 2px;
   background: linear-gradient(90deg, #bd4d8f 0%, #4e1da8 100%);
   color: var(--gold);
+  z-index: 100;
 
   .left-side {
     display: flex;
@@ -59,12 +66,12 @@
 }
 
 .decor_deck.footer {
-  position: absolute;
+  position: fixed;
   left: 0%;
   bottom: 0%;
   scale: 0.7;
   transform-origin: bottom left;
-  z-index: -5;
+  z-index: 50;
 
   &.r {
     left: initial;
