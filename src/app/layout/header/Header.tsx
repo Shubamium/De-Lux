@@ -34,10 +34,10 @@ export default function Header({}: Props) {
           />
         </div>
         <nav className="header-nav">
-          <Link className="btn btn-header-nav" href="/idols">
+          <Link className="btn btn-header-nav" href="/discography">
             <span>DISCOGRAPHY</span>
           </Link>
-          <Link className="btn btn-header-nav" href="/staffs">
+          <Link className="btn btn-header-nav" href="/credits">
             <span>CREDITS</span>
           </Link>
         </nav>

@@ -1,0 +1,80 @@
+#page_idols {
+  margin-top: 150px;
+  #idols-head {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    h2 {
+      font-size: 4rem;
+    }
+    p {
+      text-align: right;
+      font-family: var(--fontAlt);
+      color: white;
+      max-width: 50%;
+      font-size: 0.9rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.351);
+    }
+    .styled-title {
+    }
+  }
+
+  min-height: 120vh;
+
+  #idols-list {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    padding: 2em;
+    .idol-card {
+      width: 400px;
+      background: url("/backgrounds/pattern_checker_light.png"),
+        linear-gradient(121deg, #c07ffd 0%, #3783c4 100%);
+      background-size: 400px;
+      background-blend-mode: screen;
+      color: white;
+      text-align: center;
+      outline: 4px solid var(--gold);
+      border-radius: 2em;
+      padding: 2em;
+      position: relative;
+      transition: all 150ms ease;
+      &:hover {
+        scale: 1.05;
+      }
+      .idol-decor {
+        height: 40px;
+        position: absolute;
+        bottom: 2%;
+        left: 35%;
+        transform: translateY(100%);
+      }
+      .idol-img-container {
+        height: 300px;
+        width: 300px;
+        margin: 0 auto;
+        background: #7334bc;
+        border-radius: 100%;
+        object-fit: 2em;
+        .idol-img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      h2 {
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        letter-spacing: 2px;
+        font-size: 2rem;
+      }
+
+      p {
+        font-family: var(--fontAlt);
+        min-height: 150px;
+      }
+    }
+  }
+}
