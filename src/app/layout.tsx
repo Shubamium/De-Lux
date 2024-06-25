@@ -3,6 +3,7 @@ import { Fredoka } from "next/font/google";
 import "./globals.scss";
 import localFont from "next/font/local";
 import { CSSProperties } from "react";
+import Header from "./layout/header/Header";
 
 const fredoka = Fredoka({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
           } as CSSProperties
         }
       >
+        <Header />
         {children}
       </body>
     </html>

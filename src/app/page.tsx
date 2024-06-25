@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <main>
-      <h1>Delux</h1>
+    <main id="page_home">
+      <h1>Dedux</h1>
       <div className=""></div>
     </main>
   );
