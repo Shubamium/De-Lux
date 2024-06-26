@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import { CSSProperties } from "react";
 import Header from "./layout/header/Header";
 import Footer from "./layout/footer/Footer";
+import Loading from "./layout/loading/Loading";
 
 const fredoka = Fredoka({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
           } as CSSProperties
         }
       >
+        <Loading />
         <Header />
         {children}
         <Footer />

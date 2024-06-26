@@ -1,0 +1,73 @@
+#loading {
+  height: 100vh;
+  width: 100vw;
+  background: url("/backgrounds/pattern_checker_light.png"),
+    radial-gradient(
+      circle,
+      rgb(66, 33, 133) 0%,
+      rgba(20, 4, 51, 1) 64%,
+      rgba(0, 0, 0, 1) 100%
+    );
+
+  background-size: 500px;
+  position: fixed;
+  z-index: 5000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 2rem;
+
+  .decor_load-deck {
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    max-width: 20%;
+
+    &.b {
+      top: initial;
+      right: initial;
+      bottom: 0%;
+      left: 0%;
+    }
+  }
+  .loog {
+    max-width: 30%;
+    animation: loog 2s infinite alternate-reverse ease-in-out;
+  }
+  svg {
+    animation: speen 1s linear infinite;
+  }
+  transition: all 2000ms ease;
+  &.loading {
+    // animation: loading 1s linear infinite;
+    user-select: initial;
+    pointer-events: initial;
+  }
+  &.loaded {
+    // display: none;
+    opacity: 0.8;
+    transform: translateY(-100%);
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+@keyframes loog {
+  0% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 0.9;
+  }
+}
+@keyframes speen {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}

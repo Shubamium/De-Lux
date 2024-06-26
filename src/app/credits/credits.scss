@@ -42,6 +42,12 @@
     }
 
     .credit-card {
+      .credit-img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.5em;
+      }
       &:hover {
         scale: 1.05;
         .decor_crown {
@@ -57,7 +63,7 @@
         border: 3px solid var(--gold);
         margin-bottom: 1em;
         position: relative;
-
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.298);
         .decor_crown {
           position: absolute;
           bottom: 101%;
