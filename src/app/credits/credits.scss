@@ -1,0 +1,109 @@
+#credits_page {
+  #credit-head {
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-top: 150px;
+
+    p {
+      color: white;
+      font-family: var(--fontAlt);
+      text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.236);
+    }
+  }
+
+  #credit-list {
+    // max-width: 1200px;
+    margin: 2em 0;
+    padding: 1em 0;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20%;
+      left: 0%;
+      width: 100%;
+      height: 40%;
+      background: url("/backgrounds/pattern_checker_light.png"), #4e1da8;
+      background-size: 400px;
+      border-top: 15px solid #7334bc;
+      border-bottom: 15px solid #7334bc;
+      // opacity: 0.8;
+    }
+
+    .confine {
+      margin: 2em auto;
+      padding: 1em 0;
+      max-width: 1200px;
+      // background: red;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      gap: 1em;
+    }
+
+    .credit-card {
+      &:hover {
+        scale: 1.05;
+        .decor_crown {
+          transform: translateY(-20%);
+        }
+      }
+
+      transition: all 500ms ease;
+      .image-part {
+        background: #312940;
+        height: 300px;
+        border-radius: 1em;
+        border: 3px solid var(--gold);
+        margin-bottom: 1em;
+        position: relative;
+
+        .decor_crown {
+          position: absolute;
+          bottom: 101%;
+          right: 0%;
+          transition: all 250ms ease;
+          width: 45px;
+          height: 45px;
+        }
+      }
+      .credit-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h2 {
+          display: block;
+          position: relative;
+          &::before {
+            scale: 1 0.5;
+            border-radius: 2em;
+            content: "";
+            z-index: -1;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background: #7334bc;
+          }
+          border-radius: 1em;
+
+          display: flex;
+          gap: 1em;
+          color: white;
+          img {
+            // max-width: ;
+            width: 20px;
+            height: 20px;
+            filter: invert(100%);
+          }
+        }
+        p {
+          color: white;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
