@@ -22,6 +22,14 @@
         font-family: var(--fontMain);
         font-size: 1.5rem;
         padding: 0.25em 1em;
+
+        &:not(.selected) {
+          opacity: 0.4;
+        }
+        &.selected {
+          scale: 1.1;
+          opacity: 1;
+        }
       }
     }
     .disco-list {
@@ -50,15 +58,21 @@
         font-size: 1.5rem;
         background-blend-mode: overlay;
         // padding: 0.25em 1em;
+        transition: all 150ms ease;
+        &:hover {
+          scale: 1.05;
+        }
         .disco-info {
           padding: 1em;
         }
         h2 {
-          font-size: 1.4rem;
+          font-size: 1.6rem;
+          margin: 0.3em 0;
           color: var(--gold);
+          letter-spacing: 2px;
         }
         p {
-          font-size: 0.9rem;
+          font-size: 0.8rem;
         }
       }
     }
