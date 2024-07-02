@@ -7,6 +7,12 @@ export default async function Staff({}: Props) {
   const staffData = await fetchData<any>(`
 		*[_type == "staffs"]
 	`);
+
+  const description = await fetchData<any>(`
+		*[_type == "general" && preset == "main"][0]{
+			'desc': page_descriptions.staffs_desc
+		}
+	`);
   // console.log(staffData);
   return (
     <main id="page_staff">
@@ -14,12 +20,7 @@ export default async function Staff({}: Props) {
         <div className="styled-title">
           <h2>STAFF</h2>
         </div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea{" "}
-        </p>
+        <p>{description.desc}</p>
       </section>
       <section id="staff-list">
         {staffData.map((staff: any) => {

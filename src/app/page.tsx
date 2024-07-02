@@ -10,6 +10,7 @@ export default async function Home() {
 			}
 		}`
   );
+
   console.log("homeData", homeData.home_banner.src);
   return (
     <main id="page_home">

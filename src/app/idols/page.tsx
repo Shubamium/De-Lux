@@ -5,8 +5,13 @@ type Props = {};
 
 export default async function IdolPage({}: Props) {
   const idolData = await fetchData<any>(`*[_type == "idols"]`);
-
-  console.log(idolData);
+  const description = await fetchData<any>(`
+		*[_type == "general" && preset == "main"][0]{
+			'desc': page_descriptions.idols_desc
+		}
+	`);
+  console.log(description);
+  // console.log(idolData);
   return (
     <main id="page_idols">
       <section id="idols-head">
@@ -14,12 +19,7 @@ export default async function IdolPage({}: Props) {
           {" "}
           <h2>IDOLS</h2>
         </div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea{" "}
-        </p>
+        <p>{description.desc}</p>
       </section>
 
       <section id="idols-list">

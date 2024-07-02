@@ -9,12 +9,20 @@ export default async function DiscographyPage({}: Props) {
 		*[_type == "discography"]
 	`);
 
-  console.log(discographyData[0].discography);
-
+  // console.log(discographyData[0].discography);
+  const description = await fetchData<any>(`
+		*[_type == "general" && preset == "main"][0]{
+			'desc': page_descriptions.discography_desc
+		}
+	`);
   const allSongs: any[] = [];
-  discographyData.forEach((category: any) => {
-    allSongs.push(...category.discography);
-  });
+  if (discographyData !== undefined) {
+    discographyData.forEach((category: any) => {
+      if (category.discography) {
+        allSongs.push(...category.discography);
+      }
+    });
+  }
   return (
     <main id="page_discography">
       <section id="discography">
@@ -22,15 +30,12 @@ export default async function DiscographyPage({}: Props) {
           <div className="styled-title">
             <h2>DISCOGRAPHY</h2>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea{" "}
-          </p>
+          <p>{description.desc}</p>
         </div>
 
-        <DSelector allSongs={allSongs} allCategories={discographyData} />
+        {discographyData !== undefined && (
+          <DSelector allSongs={allSongs} allCategories={discographyData} />
+        )}
       </section>
     </main>
   );

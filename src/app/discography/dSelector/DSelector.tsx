@@ -60,7 +60,7 @@ export default function DSelector({ allSongs, allCategories }: Props) {
           })}
 
         {activeCat != 0 &&
-          allCategories[activeCat - 1].discography.map(
+          allCategories[activeCat - 1].discography?.map(
             (song: any, index: number) => {
               return (
                 <div className="disco-card" key={song._key}>
