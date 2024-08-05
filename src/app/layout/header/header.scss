@@ -6,12 +6,16 @@
   border-radius: 0 0 2em 2em;
   box-shadow: 0px 4px 20px #421f83c6;
   // align-items: ;
-  transform: translateY(-55%);
+  transform: translateY(-155%);
   position: fixed;
   top: 0%;
   left: 0%;
   width: 100vw;
   z-index: 1000;
+  transition: all 500ms ease;
+  &.show {
+    transform: translateY(-55%);
+  }
   .decor_header-clover {
     // content: url("/graphics/club.svg");
     position: absolute;

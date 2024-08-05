@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./header.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -7,6 +7,7 @@ type Props = {};
 
 export default function Header({}: Props) {
   const path = usePathname();
+  const [showNav, setShowNav] = useState(false);
 
   const isPath = (check: string) => {
     if (path.includes(check)) {
@@ -15,6 +16,32 @@ export default function Header({}: Props) {
       return "";
     }
   };
+
+  useEffect(() => {
+    if (path === "/") {
+      setShowNav(false);
+    } else {
+      setShowNav(true);
+    }
+    const scrollEv = (ev: Event) => {
+      const scrollY = window.scrollY;
+      // show offset for header
+      if (path === "/") {
+        if (scrollY > 300) {
+          setShowNav(true);
+        } else {
+          setShowNav(false);
+        }
+      } else {
+        setShowNav(true);
+      }
+    };
+    window.addEventListener("scroll", scrollEv);
+
+    return () => {
+      window.removeEventListener("scroll", scrollEv);
+    };
+  }, [path]);
   return (
     <>
       <img
@@ -22,7 +49,7 @@ export default function Header({}: Props) {
         alt=""
         className="decor_card-deck top l"
       />
-      <header id="main_header">
+      <header id="main_header" className={showNav ? "show" : ""}>
         <h1 hidden={true}>DeLux Official Website</h1>
 
         <img src="./graphics/club.png" alt="" className="decor_header-clover" />
