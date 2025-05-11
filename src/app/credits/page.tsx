@@ -33,7 +33,7 @@ export default async function Credits({}: Props) {
               >
                 <div className="image-part">
                   <img
-                    src={urlFor(credit.image).url()}
+                    src={urlFor(credit.image).height(800).url()}
                     alt=""
                     className="credit-img"
                   />

@@ -33,7 +33,7 @@ export default async function Staff({}: Props) {
             >
               <div className="staff-art-container">
                 <img
-                  src={urlFor(staff.image).url()}
+                  src={urlFor(staff.image).height(700).url()}
                   alt=""
                   className="staff-art"
                 />

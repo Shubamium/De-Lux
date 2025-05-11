@@ -28,7 +28,7 @@ export default async function IdolPage({}: Props) {
             <div className="idol-card" key={"idol" + idol._id}>
               <div className="idol-img-container">
                 <img
-                  src={urlFor(idol.idol_image).url()}
+                  src={urlFor(idol.idol_image).height(800).url()}
                   alt="idol-img"
                   className="idol-img"
                 />

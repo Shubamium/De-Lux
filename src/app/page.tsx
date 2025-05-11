@@ -32,7 +32,7 @@ export default async function Home() {
         <div className="about-panel">
           <img src="/graphics/main_logo.png" alt="" className="about-logo" />
           <img
-            src={urlFor(homeData.about.banner).url()}
+            src={urlFor(homeData.about.banner).height(500).url()}
             alt=""
             className="about-banner"
           />
