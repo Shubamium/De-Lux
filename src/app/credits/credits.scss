@@ -1,7 +1,8 @@
+@use "mixins" as *;
 #credits_page {
   #credit-head {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: min(1200px, 95%);
     margin-top: 150px;
 
     p {
@@ -10,9 +11,11 @@
       text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.236);
     }
   }
-
+  @include mq(420) {
+    padding-bottom: 200px;
+  }
   #credit-list {
-    // max-width: 1200px;
+    // max-width: min(1200px,95%);
     margin: 2em 0;
     padding: 1em 0;
     position: relative;
@@ -28,16 +31,33 @@
       background-size: 400px;
       border-top: 15px solid #7334bc;
       border-bottom: 15px solid #7334bc;
+      @include mq(768) {
+        display: none;
+      }
       // opacity: 0.8;
     }
 
     .confine {
       margin: 2em auto;
       padding: 1em 0;
-      max-width: 1200px;
+      max-width: min(1200px, 95%);
+      @include mq(420) {
+        max-width: 90%;
+      }
       // background: red;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      @include mq(1280) {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+      @include mq(550) {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 3em 1em;
+      }
+      @include mq(420) {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 3em 1em;
+      }
       gap: 1em;
     }
 
@@ -47,6 +67,9 @@
         height: 100%;
         object-fit: cover;
         border-radius: 0.5em;
+        @include mq(768) {
+          width: 100%;
+        }
       }
       &:hover {
         scale: 1.05;
@@ -64,6 +87,12 @@
         margin-bottom: 1em;
         position: relative;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.298);
+        @include mq(550) {
+          height: 200px;
+        }
+        @include mq(420) {
+          height: 150px;
+        }
         .decor_crown {
           position: absolute;
           bottom: 101%;
@@ -95,6 +124,9 @@
           }
           border-radius: 1em;
 
+          @include mq(420) {
+            font-size: 1rem;
+          }
           display: flex;
           gap: 1em;
           color: white;
@@ -108,6 +140,9 @@
         p {
           color: white;
           opacity: 0.5;
+          @include mq(420) {
+            font-size: 0.8rem;
+          }
         }
       }
     }

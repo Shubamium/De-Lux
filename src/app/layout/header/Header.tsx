@@ -3,12 +3,14 @@ import React, { useEffect, useState } from "react";
 import "./header.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useMediaQuery } from "react-responsive";
 type Props = {};
 
 export default function Header({}: Props) {
   const path = usePathname();
   const [showNav, setShowNav] = useState(false);
-
+  const [fsNav, setFsNav] = useState(false);
   const isPath = (check: string) => {
     if (path.includes(check)) {
       return "selected";
@@ -16,6 +18,9 @@ export default function Header({}: Props) {
       return "";
     }
   };
+  const sm = useMediaQuery({
+    query: "(max-width: 550px)",
+  });
 
   useEffect(() => {
     if (path === "/") {
@@ -27,7 +32,7 @@ export default function Header({}: Props) {
       const scrollY = window.scrollY;
       // show offset for header
       if (path === "/") {
-        if (scrollY > 300) {
+        if (scrollY > (sm ? 10 : 300)) {
           setShowNav(true);
         } else {
           setShowNav(false);
@@ -93,6 +98,14 @@ export default function Header({}: Props) {
           >
             <span>CREDITS</span>
           </Link>
+          <div
+            className={`btn btn-header-nav menu `}
+            onClick={() => {
+              setFsNav(true);
+            }}
+          >
+            <GiHamburgerMenu />
+          </div>
         </nav>
 
         <img
@@ -101,6 +114,49 @@ export default function Header({}: Props) {
           className="decor_header-clover right"
         />
       </header>
+      <div
+        className={`fsnavhead ${fsNav ? "show" : "hid"}`}
+        onClick={() => {
+          setFsNav(false);
+        }}
+      >
+        <Link
+          className={`btn btn-header-nav ${path === "/" ? "selected" : ""}`}
+          href="/"
+        >
+          <span>Home</span>
+        </Link>
+        <Link
+          className={`btn btn-header-nav ${isPath("/idols")}`}
+          href="/idols"
+        >
+          <span>Idols</span>
+        </Link>
+        <Link
+          className={`btn btn-header-nav ${isPath("/staffs")}`}
+          href="/staffs"
+        >
+          <span>Staff</span>
+        </Link>
+        <Link
+          className={`btn btn-header-nav ${isPath("/discography")}`}
+          href="/discography"
+        >
+          <span>DISCOGRAPHY</span>
+        </Link>
+        <Link
+          className={`btn btn-header-nav ${isPath("/credits")}`}
+          href="/credits"
+        >
+          <span>CREDITS</span>
+        </Link>
+        <Link
+          className={`btn btn-header-nav ${isPath("/credits")}`}
+          href="/credits"
+        >
+          <span>CLOSE</span>
+        </Link>
+      </div>
       <img
         src="/decors/card-deck.svg"
         alt=""

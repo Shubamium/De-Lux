@@ -46,7 +46,7 @@ export default function Footer({}: Props) {
         </div>
         <div className="right-side">
           <a target="_blank" href="https://twitter.com/Shubamium2">
-            Built and Designed by <b>SHUBAMIUM</b>
+            <span>Built and Designed by</span> <b>SHUBAMIUM</b>
           </a>
         </div>
       </footer>

@@ -1,12 +1,19 @@
+@use "mixins" as *;
 #page_discography {
   margin-top: 150px;
   #discography {
-    max-width: 1200px;
+    max-width: min(1200px, 90%);
     margin: 0 auto;
     padding-bottom: 150px;
     .head {
       h2 {
         color: transparent;
+        @include mq(420) {
+          font-size: 3rem;
+        }
+        @include mq(320) {
+          font-size: 2rem;
+        }
       }
     }
 
@@ -23,6 +30,12 @@
         font-size: 1.5rem;
         padding: 0.25em 1em;
 
+        @include mq(550) {
+          font-size: 1.2rem;
+        }
+        @include mq(420) {
+          font-size: 1rem;
+        }
         &:not(.selected) {
           opacity: 0.4;
         }
@@ -37,9 +50,21 @@
       grid-template-columns: 1fr 1fr 1fr;
       gap: 1em;
       padding: 1em 0;
+
+      @include mq(768) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @include mq(550) {
+        grid-template-columns: 1fr;
+      }
       .yt-embed {
         height: 250px;
         background: #401899;
+        @include mq(768) {
+          height: auto;
+          width: 100%;
+          aspect-ratio: 16/9;
+        }
         iframe {
           width: 100%;
           height: 100%;
@@ -59,17 +84,27 @@
         background-blend-mode: overlay;
         // padding: 0.25em 1em;
         transition: all 150ms ease;
+
+        @include mq(768) {
+          font-size: 1rem;
+        }
         &:hover {
           scale: 1.05;
         }
         .disco-info {
           padding: 1em;
+          @include mq(550) {
+            padding: 0.5em;
+          }
         }
         h2 {
           font-size: 1.6rem;
           margin: 0.3em 0;
           color: var(--gold);
           letter-spacing: 2px;
+          @include mq(768) {
+            font-size: 1.2rem;
+          }
         }
         p {
           font-size: 0.8rem;

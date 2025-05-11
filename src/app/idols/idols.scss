@@ -1,11 +1,18 @@
+@use "mixins" as *;
 #page_idols {
   margin-top: 150px;
   #idols-head {
-    max-width: 1000px;
+    max-width: min(1000px, 80%);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: end;
+    @include mq(550) {
+      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     h2 {
       font-size: 4rem;
     }
@@ -22,17 +29,27 @@
   }
 
   min-height: 120vh;
-
+  @include mq(550) {
+    padding-bottom: 200px;
+  }
   #idols-list {
     display: flex;
     justify-content: center;
     gap: 2em;
     padding: 2em;
+    @include mq(550) {
+      flex-wrap: wrap;
+    }
+    @include mq(420) {
+      padding: 1em;
+    }
     .idol-card {
       width: 400px;
+
       background: url("/backgrounds/pattern_checker_light.png"),
         linear-gradient(121deg, #c07ffd 0%, #3783c4 100%);
-      background-size: 400px;
+
+      background-size: 400px, 100%;
       background-blend-mode: screen;
       color: white;
       text-align: center;
@@ -41,6 +58,10 @@
       padding: 2em;
       position: relative;
       transition: all 150ms ease;
+
+      @include mq(1024) {
+        width: 100%;
+      }
       &:hover {
         scale: 1.05;
       }
@@ -50,10 +71,31 @@
         bottom: 2%;
         left: 35%;
         transform: translateY(100%);
+        @include mq(550) {
+          left: 20%;
+          bottom: 4%;
+        }
+        @include mq(420) {
+          width: 100%;
+          object-fit: contain;
+          transform: unset;
+          left: 0%;
+          bottom: -15px;
+          height: 30px;
+        }
       }
       .idol-img-container {
         height: 300px;
         width: 300px;
+
+        @include mq(1024) {
+          width: 220px;
+          height: 220px;
+        }
+        @include mq(768) {
+          width: 180px;
+          height: 180px;
+        }
         margin: 0 auto;
         background: #7334bc;
         border-radius: 100%;
@@ -75,6 +117,10 @@
       p {
         font-family: var(--fontAlt);
         min-height: 150px;
+        @include mq(420) {
+          min-height: auto;
+          padding-bottom: 2em;
+        }
       }
     }
   }
